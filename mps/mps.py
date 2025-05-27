@@ -1,5 +1,4 @@
 import numpy as np
-import sympy as sp
 
 
 
@@ -25,13 +24,12 @@ def mps(T : np.ndarray,n,dims :list):
         T = vh[:non_zeros,:]
         prod_dims = rest_dims
     Alist[n-1]=T
-    return 
+    return Alist
 
 
 if __name__ == "__main__":
     n = 4
     T,l = construct_w_tensor(n)
-    print(T)
     Alist = mps(T,n,l)   
     for A in Alist:
         print(A)
